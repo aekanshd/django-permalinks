@@ -1,2 +1,6 @@
 venv/
 .idea/
+dist/
+__pycache__/
+build/
+django_permalinks.egg-info/

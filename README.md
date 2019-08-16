@@ -27,7 +27,7 @@ pip install django-permalinks
     from django.urls import url, include
     
     urlpatterns = [
-        # Make sure permalinks.url is FIRST in the URLs array.
+        # Make sure permalinks.url is FIRST in the URLPATTERNS array.
         url('', include('permalinks.urls')),  # You MUST use an empty string as the URL prefix
         ...
     ]

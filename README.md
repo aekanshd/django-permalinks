@@ -21,15 +21,12 @@ pip install django-permalinks
     ]
     ```
 
- 2. Add the permalinks web app URLs to urls.py **on the top of the list**:
+ 2. Add the permalinks middleware to `settings.py` **on the top of the list**:
 
     ```python
-    from django.urls import url, include
-    
-    urlpatterns = [
-        # Make sure permalinks.url is FIRST in the URLPATTERNS array.
-        url('', include('permalinks.urls')),  # You MUST use an empty string as the URL prefix
-        ...
+    MIDDLEWARE = [
+    'permalinks.middleware.main.PermalinksMiddleware',
+    ...
     ]
     ```
 

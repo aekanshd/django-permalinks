@@ -3,4 +3,12 @@ venv/
 dist/
 __pycache__/
 build/
-django_permalinks.egg-info/
+*.egg-info/
+*.py[cod]
+.idea/
+*.orig
+.venv/
+build/
+dist/
+.tox/
+.coverage

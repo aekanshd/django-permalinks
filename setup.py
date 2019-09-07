@@ -13,7 +13,7 @@ install_requirements = [
 
 setuptools.setup(
     name="django-permalinks",
-    version="0.0.3",
+    version="0.1.3",
     install_requires=install_requirements,
     license='MIT License',
     author="Aekansh Dixit",
@@ -23,6 +23,8 @@ setuptools.setup(
     long_description_content_type="text/markdown",
     url="https://github.com/aekanshd/django-permalinks",
     packages=setuptools.find_packages(),
+    package_data={'': ['templates/admin/url_shortner_script.html']},
+    include_package_data=True,
     classifiers=[
         "Environment :: Web Environment",
         "Framework :: Django",

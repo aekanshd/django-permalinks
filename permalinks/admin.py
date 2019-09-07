@@ -6,6 +6,7 @@ from .models import Permalinks
 
 class PermalinksAdmin(admin.ModelAdmin):
     """Admin options for Permalinks"""
+    change_form_template = 'admin/url_shortner_script.html'
 
     fieldsets = [
         ('URL Redirects', {

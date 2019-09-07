@@ -12,9 +12,9 @@ class CommonFields(models.Model):
 
 class Permalinks(CommonFields):
     permalink_id = models.BigAutoField(primary_key=True)
-    old_url = models.URLField(max_length=300, verbose_name="Old URL", unique=True,
+    old_url = models.URLField(max_length=500, verbose_name="Old URL", unique=True,
                               help_text="This is the URL that will be redirected.<br>Follow Full URL Scheme: <b>https://www.example.com/myapp/mypage.html</b>")
-    new_url = models.URLField(max_length=300, verbose_name="New URL",
+    new_url = models.URLField(max_length=500, verbose_name="New URL",
                               help_text="This is the URL to which the above URL will be redirected.<br>Follow Full URL Scheme: <b>https://www.example.com/myapp/mypage.html</b>")
 
     def __str__(self):

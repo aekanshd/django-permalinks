@@ -1,0 +1,20 @@
+{% extends 'admin/change_form.html' %}
+
+{% block after_field_sets  %}
+{{ block.super }}
+<div style="margin: 20px;">
+	<h3> URL Shortner</h3>
+	<br><br>
+	In order to shorten a url:
+	<ol>
+	  <li> Click the "Generate a random string" link below.</li>
+	  <li> Click the "Use this string" link when it appears.</li>
+	  <li> Enter the long URL in the 'NEW URL' box above.</li>
+	</ol>
+	<a href="#" id="generateNewString">Generate a random string</a>
+	<p id="response_para" style="display:none;">Generated string: <span style="font-weight: bold;" id="generated_string">mystringhere</span> | <a href="#" id="useThisStringLink">Use this string</a></p>
+</div>
+<script type="text/javascript">
+(function($) {'use strict';let root_url="{{ request.scheme }}://{{ request.META.HTTP_HOST }}/";$("#generateNewString").on("click",function(a){a.preventDefault(),$("#response_para").hide(),$.ajax({url:"/permalinks/get-random-string/",type:"GET",success:function(a){var b=a.result;$("#generated_string").html(b),$("#response_para").show("slow")},error:function(a){alert("Request: "+JSON.stringify(a))}})}),$("#useThisStringLink").on("click",function(a){a.preventDefault(),$("#response_para").hide("slow"),$("#id_old_url").val(root_url+$("#generated_string").html())});})(django.jQuery);
+</script>
+{% endblock %}

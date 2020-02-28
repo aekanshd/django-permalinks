@@ -13,7 +13,7 @@ install_requirements = [
 
 setuptools.setup(
     name="django-permalinks",
-    version="0.1.4",
+    version="0.1.3",
     install_requires=install_requirements,
     license='MIT License',
     author="Aekansh Dixit",
